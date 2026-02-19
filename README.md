@@ -17,3 +17,7 @@ Results: V17 has a correlation of -0.32 with Class, and V14 has a correlation of
 
 The kNN Analysis block (Code block 6) uses binary grouping, uses a stratified sample for training data, uses a range of 3-8 nearest neighbors to optimize speed, and limits to the top correlated features to reduce dimensionality. 
 Results: 
+This model is excellent at detecting the majority class (0 or "not fraudulent"). It identified every 0 with perfect precision.
+The model is good at detecting the minority class (1 or "fraudulent") but could stand improvement. It identified 80.8% of the fraudulent data in the stratified test sample. 
+
+Ways to improve this model: This could either be improved by increasing the number of neighbors (the k variable); by increasing the test sample size; by not limiting the model only to the highest correlated factors; or by running the entire dataset rather than a sample. Each of these steps will increase the computing time needed for the model, so the tradeoff is to deal with 19.2% of fraud going undetected or paying for more computing time. 
