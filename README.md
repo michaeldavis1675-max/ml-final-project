@@ -15,9 +15,16 @@ The Preprocessing step (Code block 4) selects the target as per user input; test
 The Correlation Analysis step (Code block 5) displays the training data in a full correlation heatmap; shows the top 10 positive and negative features correlated with the target; and displays absolute correlations heatmap with annotations for correlations above 0.3 and below -0.3.
 Results: V17 has a correlation of -0.32 with Class, and V14 has a correlation of -0.3 with Class. All other features were less strongly correlated with Class.
 
-The kNN Analysis block (Code block 6) uses binary grouping, uses a stratified sample for training data, uses a range of 3-8 nearest neighbors to optimize speed, and limits to the top correlated features to reduce dimensionality. 
+The kNN Analysis block (Code block 6) uses binary grouping, uses a stratified sample for training data, uses a range of 3-8 nearest neighbors to optimize speed, and limits to the top 10 correlated features to reduce dimensionality. 
 Results: 
 This model is excellent at detecting the majority class (0 or "not fraudulent"). It identified every 0 with perfect precision.
 The model is good at detecting the minority class (1 or "fraudulent") but could stand improvement. It identified 80.8% of the fraudulent data in the stratified test sample. 
 
 Ways to improve this model: This could either be improved by increasing the number of neighbors (the k variable); by increasing the test sample size; by not limiting the model only to the highest correlated factors; or by running the entire dataset rather than a sample. Each of these steps will increase the computing time needed for the model, so the tradeoff is to deal with 19.2% of fraud going undetected or paying for more computing time. 
+
+The advanced technique I selected was a decision tree (Code block 7). It was also limited to the top 10 features correlated with Class and used depth restriction from 2 to 11. 
+Results:
+The decision tree kept the precision of 1 (perfect classification) for the "not fraudulent" category, and improved to 84.7% accuracy on properly classifying the "fraudulent" data points.This is a big improvement.
+
+Like the kNN, classification would probably be improved with the full dataset, all the factors, and by using greater depth. But this would also come at a cost of more computation.
+
