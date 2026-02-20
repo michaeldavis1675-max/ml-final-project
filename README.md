@@ -1,3 +1,5 @@
+Model location: https://colab.research.google.com/drive/16xhyjV1OyKW9dTHmUfaXvWH0RIt2AEDH?usp=sharing
+
 ==================== Credit Card Fraud Detection ====================
 
 This project uses the credit card dataset found at https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud to train a Machine Learning model to detect credit card transactions that are likely to be fraudulent. This model was built in Google Colab in Python. The problem is to examine the credit card transaction data and to do a binary classification: is the transaction fraudulent or not?
